@@ -52,4 +52,4 @@
 |28. | Grove - Button | 1
 |29. | Grove - Stepper Motor Driver | 1
  
-[KitPhoto1]: ../common/SCEW_Case_Open.png "Complete Kit"
+[KitPhoto1]: ../master/SCEW_Case_Open.png "Complete Kit"
