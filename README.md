@@ -8,9 +8,9 @@
 1. Download or 'clone' this repository to the desktop.
 2. Unzip the download to the desktop.
 3. Click the link for the board you want to use to go to the next set of instructions.
-  1.[SODAQ-One :: LoRaWAN](../blob/master/WiFi)
-  2.[Thinxtra Xkit :: SigFox](../blob/master/SigFox)
-  3.[Arduino Uno :: WiFi](../blob/master/WiFi)
+ 1.[SODAQ-One :: LoRaWAN](../blob/master/WiFi)
+ 2.[Thinxtra Xkit :: SigFox](../blob/master/SigFox)
+ 3.[Arduino Uno :: WiFi](../blob/master/WiFi)
   
 ## Smart City Kit
 
