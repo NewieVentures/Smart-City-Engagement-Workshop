@@ -20,27 +20,27 @@ Connect to WiFi
 9. Look underneath the UNO to find the 6 character identifier.
 10. Connect to the WiFi network named Arduino-Uno-WiFi-xxxxxx where xxxxxx is your UNO's identifier.
 11. Browse to http://192.168.240.1
-12. Click "CHANGE" next to "Hostname" in the web page that appears.
-13. Enter "unoxxxxxx" as the hostname, where xxxxxx is your UNO's identifier.
+12. Click _CHANGE_ next to _Hostname_ in the web page that appears.
+13. Enter _unoxxxxxx_ as the hostname, where xxxxxx is your UNO's identifier.
 14. Select a suitable Wifi connection, enter the password and click Connect.
-15. Click the "CONNECTIVITY" link in "SETTINGS" on the left of the web page.
-16. Enter "things.ubidots.com" into the "Server hostname or IP" field.
-17. Enter "zJYipkVm3AXYPdjqIpzKmMSMY64OvL" into the "Username" field. Leave "Password" blank.
-18. Check the "Enable MQTT client" box and confirm that the state becomes "connected". If so, then you've successfully connected over WiFi! If not, double check the steps so far, or seek help.
+15. Click the _CONNECTIVITY_ link in _SETTINGS_ on the left of the web page.
+16. Enter _things.ubidots.com_ into the _Server hostname or IP_ field.
+17. Enter _zJYipkVm3AXYPdjqIpzKmMSMY64OvL_ into the _Username_ field. Leave _Password_ blank.
+18. Check the _Enable MQTT client_ box and confirm that the state becomes _connected_. If so, then you've successfully connected over WiFi! If not, double check the steps so far, or seek help.
 
 
 Send via WiFi
 -------------
 
-19. In the DemoApp window, find the line that starts with "#define ID", about 8 lines from the top.
-20. Add your UNO's identifier. For example, if your UNO identifier is 822ed1, the line should look like:
+19. In the DemoApp window, find the line that starts with _#define ID_, about 8 lines from the top.
+20. Add your UNO's identifier. For example, if your UNO identifier is _822ed1_, the line should look like:
 * #define ID    822ed1
-* _The spaces between "ID" and "822ed1" are not important._
+* The spaces between _ID_ and _822ed1_ are not important.
 21. Save your changes and then click the "tick" button at the top left of the DemoApp window.
 * Some red and white text output should appear in the black section at the bottom of the window.
-* If *Done compiling* appears in the green section above the black section, move to the next step.
-* If *Done compiling* does not appear, double check each of the steps so far or seek some help.
-22. Click the "arrow" button next to the "tick" button to program your changes to the UNO WiFi board. After about 15 seconds "Done uploading" should appear in the green section. If not, double check the connections or seek help.
+* If _Done compiling_ appears in the green section above the black section, move to the next step.
+* If _Done compiling_ does not appear, double check each of the steps so far or seek some help.
+22. Click the "arrow" button next to the "tick" button to program your changes to the UNO WiFi board. After about 15 seconds _Done uploading_ should appear in the green section. If not, double check the connections or seek help.
 
 The UNO board will automatically start sending messages every minute.
 
