@@ -33,6 +33,7 @@ Preparation
 - Ensure the CH341SER drivers can be installed with user permissions, otherwise install on each workstation.
 - Ensure there is Sigfox coverage (use the Sens'it).
 - Ensure there is cellular coverage for the cellular modem.
+- Unplug the Xkit boards from the UNOs to allow initial programming.
 
 
 Gotchas
