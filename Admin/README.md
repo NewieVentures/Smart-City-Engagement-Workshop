@@ -75,7 +75,7 @@ Set to DHCP client, LAN side, no HTTPS access, no WAN access.
 Default credentials.
 MAC address: 00:08:00:4A:18:43
 Configured LoRa Network Server:
-- Enabled, AU915, sub-band 4, public.
+- Enabled, AU915, sub-band 3, public.
 - Mode: NETWORK SERVER (Ubidots also supports packet forwarder, but opted to use Node-RED instead to present friendly interface to Ubidots)
 - EUI: DEADBEEFDEADBEEF
 - Key: FEEDFACEFEEDFACEFEEDFACEFEEDFACE

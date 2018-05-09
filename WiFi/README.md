@@ -20,31 +20,27 @@ Connect to WiFi
 9. Look underneath the UNO to find the 6 character identifier.
 10. Connect to the WiFi network named Arduino-Uno-WiFi-xxxxxx where xxxxxx is your UNO's identifier.
 11. Browse to http://192.168.240.1
-12. Click "CHANGE" next to "Hostname" in the web page that appears.
-13. Enter "unoxxxxxx" as the hostname, where xxxxxx is your UNO's identifier.
+12. Click _CHANGE_ next to _Hostname_ in the web page that appears.
+13. Enter _unoxxxxxx_ as the hostname, where xxxxxx is your UNO's identifier.
 14. Select a suitable Wifi connection, enter the password and click Connect.
-15. Click the "CONNECTIVITY" link in "SETTINGS" on the left of the web page.
-16. Enter "things.ubidots.com" into the "Server hostname or IP" field.
-17. Enter "zJYipkVm3AXYPdjqIpzKmMSMY64OvL" into the "Username" field. Leave "Password" blank.
-18. Check the "Enable MQTT client" box and confirm that the state becomes "connected". If so, then you've successfully connected over WiFi! If not, double check the steps so far, or seek help.
+15. Click the _CONNECTIVITY_ link in _SETTINGS_ on the left of the web page.
+16. Enter _things.ubidots.com_ into the _Server hostname or IP_ field.
+17. Enter _zJYipkVm3AXYPdjqIpzKmMSMY64OvL_ into the _Username_ field. Leave _Password_ blank.
+18. Check the _Enable MQTT client_ box and confirm that the state becomes _connected_. If so, then you've successfully connected over WiFi! If not, double check the steps so far, or seek help.
 
 
 Send via WiFi
 -------------
 
-19. In the DemoApp window, find the line that starts with "#define ID", about 8 lines from the top.
-20. Add your UNO's identifier. For example, if your UNO identifier is 822ed1, the line should look like:
-
-#define ID    822ed1
-
-The spaces between "ID" and "822ed1" are not important.
-
+19. In the DemoApp window, find the line that starts with _#define ID_, about 8 lines from the top.
+20. Add your UNO's identifier. For example, if your UNO identifier is _822ed1_, the line should look like:
+* #define ID    822ed1
+* The spaces between _ID_ and _822ed1_ are not important.
 21. Save your changes and then click the "tick" button at the top left of the DemoApp window.
-Some red and white text output should appear in the black section at the bottom of the window.
-If "Done compiling" appears in the green section above the black section, move to the next step.
-If "Done compiling" does not appear, double check each of the steps so far or seek some help.
-
-22. Click the "arrow" button next to the "tick" button to program your changes to the UNO WiFi board. After about 15 seconds "Done uploading" should appear in the green section. If not, double check the connections or seek help.
+* Some red and white text output should appear in the black section at the bottom of the window.
+* If _Done compiling_ appears in the green section above the black section, move to the next step.
+* If _Done compiling_ does not appear, double check each of the steps so far or seek some help.
+22. Click the "arrow" button next to the "tick" button to program your changes to the UNO WiFi board. After about 15 seconds _Done uploading_ should appear in the green section. If not, double check the connections or seek help.
 
 The UNO board will automatically start sending messages every minute.
 
@@ -53,24 +49,18 @@ Verify transmission to Internet
 -------------------------------
 
 24. Open the Ubidots website in a browser and use the username and password to login:
-
-https://app.ubidots.com/accounts/signin/
-
-Username: NewcastleIoTPioneers
-Password: m(pDTUGVAg48
-
+* https://app.ubidots.com/accounts/signin/
+* Username: _NewcastleIoTPioneers_
+* Password: _m(pDTUGVAg48_
 25. Click the "Devices" link near the centre top.
 26. If a device appears named "uno_XXXXXX" where XXXXXX matches your UNO's ID, then rejoice in having transmitted your first WiFi message! If not, try refreshing the website, or seek some help.
-
 27. Click on your device to see the data that was transmitted. The 6 variables are simply the raw values of the analog inputs on the UNO. For reference, they are:
-
-data1 - a0
-data2 - a1
-data3 - a2
-data4 - a3
-data5 - a4
-data6 - a5
-
+* data1 - a0
+* data2 - a1
+* data3 - a2
+* data4 - a3
+* data5 - a4
+* data6 - a5
 28. These raw values are a little hard to work with, so let's create some friendlier variables. Click the "Add Variable" box at the end of the variables and select "Derived".
 29. Select your device and then select the "data1" variable.
 30. In the edit box that appears, type "*100/1023" to multiply data1 by 100 and divide by 1023.
@@ -109,16 +99,13 @@ Get Creative
 ------------
 
 51. Think about some of the possibilities:
-
-What could this data be used for?
-Are there any other sensors (eg. moisture, proximity, sound) that might be useful?
-Is there an Internet service (eg. email, SMS, Twitter, IFTTT) that could be triggered via an event?
-What about untethering the board from the computer and running off a battery?
-
+* What could this data be used for?
+* Are there any other sensors (eg. moisture, proximity, sound) that might be useful?
+* Is there an Internet service (eg. email, SMS, Twitter, IFTTT) that could be triggered via an event?
+* What about untethering the board from the computer and running off a battery?
 52. Start experimenting. Keep these guidelines in mind:
-
-- All the data in Ubidots is visible to everyone in the workshop. That means you can add data from other people's things to your dashboard!
-- That also means you must be careful not to modify dashboards or devices you did not create, or you risk ruining someone else's work.
-- To change the data sent by the UNO, go back to Arduino and modify the code.
-- Note that regardless of the data you send, it must fit the existing 6 data value pattern. The first three data values are unsigned integers and the last three are signed integers. Seek help if you'd like to send a different format.
-- You're not restricted to Ubidots. If there's another service you'd like to send the data to, either use Ubidots events to push it there, or seek help to redirect the WiFi backend.
+* All the data in Ubidots is visible to everyone in the workshop. That means you can add data from other people's things to your dashboard!
+* That also means you must be careful not to modify dashboards or devices you did not create, or you risk ruining someone else's work.
+* To change the data sent by the UNO, go back to Arduino and modify the code.
+* Note that regardless of the data you send, it must fit the existing 6 data value pattern. The first three data values are unsigned integers and the last three are signed integers. Seek help if you'd like to send a different format.
+* You're not restricted to Ubidots. If there's another service you'd like to send the data to, either use Ubidots events to push it there, or seek help to redirect the WiFi backend.
