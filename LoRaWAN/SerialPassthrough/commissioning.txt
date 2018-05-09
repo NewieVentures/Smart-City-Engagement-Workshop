@@ -2,8 +2,7 @@ sys get ver
 sys factoryRESET
 sys reset
 mac get deveui
-mac set appeui deadbeefdeadbeef
-mac set appkey feedfacefeedfacefeedfacefeedface
+
 mac set ch status 0 off
 mac set ch status 1 off
 mac set ch status 2 off
@@ -20,22 +19,22 @@ mac set ch status 12 off
 mac set ch status 13 off
 mac set ch status 14 off
 mac set ch status 15 off
-mac set ch status 16 on
-mac set ch status 17 on
-mac set ch status 18 on
-mac set ch status 19 on
-mac set ch status 20 on
-mac set ch status 21 on
-mac set ch status 22 on
-mac set ch status 23 on
-mac set ch status 24 off
-mac set ch status 25 off
-mac set ch status 26 off
-mac set ch status 27 off
-mac set ch status 28 off
-mac set ch status 29 off
-mac set ch status 30 off
-mac set ch status 31 off
+mac set ch status 16 off
+mac set ch status 17 off
+mac set ch status 18 off
+mac set ch status 19 off
+mac set ch status 20 off
+mac set ch status 21 off
+mac set ch status 22 off
+mac set ch status 23 off
+mac set ch status 24 on
+mac set ch status 25 on
+mac set ch status 26 on
+mac set ch status 27 on
+mac set ch status 28 on
+mac set ch status 29 on
+mac set ch status 30 on
+mac set ch status 31 on
 mac set ch status 32 off
 mac set ch status 33 off
 mac set ch status 34 off
@@ -76,7 +75,9 @@ mac set ch status 68 off
 mac set ch status 69 off
 mac set ch status 70 off
 mac set ch status 71 off
-mac set ch status 71 off
+
+mac set appeui deadbeefdeadbeef
+mac set appkey feedfacefeedfacefeedfacefeedface
 
 mac save
 > ok
