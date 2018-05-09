@@ -31,7 +31,7 @@ Preparation
 - Ensure enough workstations are available.
 - Ensure Arduino is installed, web access is available and a USB port is accessible.
 - Ensure the CH341SER drivers can be installed with user permissions, otherwise install on each workstation.
-- Ensure there is Sigfox coverage (use the Sens'it).
+- Ensure there is Sigfox coverage (use the Sens'it and https://v2.sensit.io/v2/sensor/36567/ ).
 - Ensure there is cellular coverage for the cellular modem.
 - Unplug the Xkit boards from the UNOs to allow initial programming.
 
