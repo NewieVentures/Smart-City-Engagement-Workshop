@@ -10,13 +10,11 @@ Installation
 4. Select the "Sketch->Include Library->Manage Libraries..." menu item.
 5. Enter "LSM303" in the search field and then select and install the "LSM303 by Pololu" library.
 6. After installation, click close.
-
 7. Select the "File->Preferences" menu item.
 8. Add "http://downloads.sodaq.net/test/package_sodaq_index.json" to the "Additional Board Manager URLs" field and click "OK".
 9. Select the "Tools->Board->Boards Manager..." menu item.
 10. Enter "SODAQ" in the search field and then select and install the SODAQ SAMD Boards item.
 11. After installation, click close.
-
 12. Select the "Tools->Board->SODAQ ONE with ONEBase SPI" menu item
 13. Select the "Tools->Ports->SODAQ ExpLoRa" menu item.
 14. Click the magnifying glass icon at the top right labelled "Serial Monitor".
@@ -98,16 +96,14 @@ Get Creative
 ------------
 
 46. Think about some of the possibilities:
-
-What could this data be used for?
-Are there any other sensors (eg. moisture, proximity, sound) that might be useful?
-Is there an Internet service (eg. email, SMS, Twitter, IFTTT) that could be triggered via an event?
-What about untethering the board from the computer and running off a battery?
+* What could this data be used for?
+* Are there any other sensors (eg. moisture, proximity, sound) that might be useful?
+* Is there an Internet service (eg. email, SMS, Twitter, IFTTT) that could be triggered via an event?
+* What about untethering the board from the computer and running off a battery?
 
 47. Start experimenting. Keep these guidelines in mind:
-
-- All the data in Ubidots is visible to everyone in the workshop. That means you can add data from other people's things to your dashboard!
-- That also means you must be careful not to modify dashboards or devices you did not create, or you risk ruining someone else's work.
-- To change the data sent by the One, go back to Arduino and modify the code.
-- Note that regardless of the data you send, it must fit the existing 6 data value pattern. The first three data values are unsigned integers and the last three are signed integers. Seek help if you'd like to use the 12 bytes in some other way.
-- You're not restricted to Ubidots. If there's another service you'd like to send the data to, either use Ubidots events to push it there, or seek help to redirect the LoraWAN backend.
+* All the data in Ubidots is visible to everyone in the workshop. That means you can add data from other people's things to your dashboard!
+* That also means you must be careful not to modify dashboards or devices you did not create, or you risk ruining someone else's work.
+* To change the data sent by the One, go back to Arduino and modify the code.
+* Note that regardless of the data you send, it must fit the existing 6 data value pattern. The first three data values are unsigned integers and the last three are signed integers. Seek help if you'd like to use the 12 bytes in some other way.
+* You're not restricted to Ubidots. If there's another service you'd like to send the data to, either use Ubidots events to push it there, or seek help to redirect the LoraWAN backend.
