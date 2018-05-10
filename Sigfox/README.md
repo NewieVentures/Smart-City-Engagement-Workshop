@@ -5,7 +5,6 @@ Installation
 ------------
 
 1. Plug the UNO board into the USB port of the computer.
-2. Double-click _SETUP_ inside the _CH341SER_ folder and click the _INSTALL_ button to install the USB driver. It may take some time, so feel free to complete steps 3 and 4 while you're waiting.
 3. Open _libraries_ folder in the _Xkit-Repos_ folder.
 4. Copy the contents of the _libraries_ folder into _C:\Users\<yourusername>\Documents\Arduino\libraries_
 5. Open the _DemoApp_ folder in the _Xkit-Repos_ folder.
@@ -40,7 +39,7 @@ Verify transmission to Internet
 16. Open the Ubidots website in a browser and use the username and password to login:
 * https://app.ubidots.com/accounts/signin/
 * Username: `NewcastleIoTPioneers`
-* Password: `_m(pDTUGVAg48_`
+* Password: `m(pDTUGVAg48`
 
 17. Click the _Devices_ link near the centre top.
 18. Look for the sticker on the underside of the UNO board, and note the _SigfoxID_, eg. _002BEFDB_.
