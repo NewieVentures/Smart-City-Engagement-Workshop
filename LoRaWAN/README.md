@@ -5,37 +5,37 @@ Installation
 ------------
 
 1. Plug the SODAQ ONE board into the USB port of the computer.
-2. Open the "DemoApp" folder.
-3. Double-click the "DemoApp" file to open in Arduino.
-4. Select the "Sketch->Include Library->Manage Libraries..." menu item.
-5. Enter "LSM303" in the search field and then select and install the "LSM303 by Pololu" library.
-6. After installation, click close.
-7. Select the "File->Preferences" menu item.
-8. Add "http://downloads.sodaq.net/test/package_sodaq_index.json" to the "Additional Board Manager URLs" field and click "OK".
-9. Select the "Tools->Board->Boards Manager..." menu item.
-10. Enter "SODAQ" in the search field and then select and install the SODAQ SAMD Boards item.
-11. After installation, click close.
-12. Select the "Tools->Board->SODAQ ONE with ONEBase SPI" menu item
-13. Select the "Tools->Ports->SODAQ ExpLoRa" menu item.
-14. Click the magnifying glass icon at the top right labelled "Serial Monitor".
-15. In the window that opens, change the "No line ending" drop down menu to "Both NL & CR".
-16. In the text field at the top of the window, type "sys get ver" and press return.
-17. If "RN2903AU 0.9.7rc7 Aug 11 2016 15:07:56" appears, then rejoice in having connected to the LoRa modem! If not, try again, check the steps so far, or seek help.
+2. Open the _DemoApp_ folder.
+3. Double-click the _DemoApp_ file to open in Arduino.
+4. Select the _Sketch->Include Library->Manage Libraries..._ menu item.
+5. Enter _LSM303_ in the search field and then select and install the _LSM303 by Pololu_ library.
+6. After installation, click _Close_.
+7. Select the _File->Preferences_ menu item.
+8. Add "http://downloads.sodaq.net/test/package_sodaq_index.json" to the _Additional Board Manager URLs_ field and click _OK_.
+9. Select the _Tools->Board->Boards Manager..._ menu item.
+10. Enter _SODAQ_ in the search field and then select and install the SODAQ SAMD Boards item.
+11. After installation, click _Close_.
+12. Select the _Tools->Board->SODAQ ONE with ONEBase SPI_ menu item
+13. Select the _Tools->Ports->SODAQ ExpLoRa_ menu item.
+14. Click the magnifying glass icon at the top right labelled _Serial Monitor_.
+15. In the window that opens, change the _No line ending_ drop down menu to _Both NL & CR_.
+16. In the text field at the top of the window, type _sys get ver_ and press return.
+17. If _RN2903AU 0.9.7rc7 Aug 11 2016 15:07:56_ appears, then rejoice in having connected to the LoRa modem! If not, try again, check the steps so far, or seek help.
 
 
 Connect to LoRaWAN
 ------------------
 
-18. Now type "sys get hweui" and press return. Note the string of digits that appear.
-19. In the DemoApp window, find the line that starts with "uint8_t DevEUI[8]", below the "OTAA" heading.
-20. Change the series of "0x00" to the pairs of digits that appeared in the serial monitor. For example, if when you issued "sys get hweui" it returned "0004A30B001A2C31", then change the DevEUI to look like this:
-* uint8_t DevEUI[8] = { 0x00, 0x04, 0xA3, 0x0B, 0x00, 0x1A, 0x2C, 0x31 };
-21. Save your changes and then click the "tick" button at the top left of the DemoApp window.
+18. Now type `sys get hweui` and press return. Note the string of digits that appear.
+19. In the _DemoApp_ window, find the line that starts with `uint8_t DevEUI[8]`, below the "OTAA" heading.
+20. Change the series of `0x00` to the pairs of digits that appeared in the serial monitor. For example, if when you issued `sys get hweui` it returned `0004A30B001A2C31`, then change the DevEUI to look like this:
+* `uint8_t DevEUI[8] = { 0x00, 0x04, 0xA3, 0x0B, 0x00, 0x1A, 0x2C, 0x31 };`
+21. Save your changes and then click the _tick_ button at the top left of the _DemoApp_ window.
 Some red and white text output should appear in the black section at the bottom of the window.
-* If *Done compiling* appears in the green section above the black section, move to the next step.
-* If *Done compiling* does not appear, double check each of the steps so far or seek some help.
-22. Click the "arrow" button next to the "tick" button to program your changes to the SODAQ One board. After about 15 seconds "Done uploading" should appear in the green section. If not, double check the connections or seek help.
-23. Take a look at the Serial Monitor. If "OTAA connection successful!" appears, then congratulations, you've just connected a new node to the LoRaWAN! If not, double check the steps so far or seek help.
+* If _Done compiling_ appears in the green section above the black section, move to the next step.
+* If _Done compiling_ does not appear, double check each of the steps so far or seek some help.
+22. Click the "arrow" button next to the "tick" button to program your changes to the SODAQ One board. After about 15 seconds _Done uploading_ should appear in the green section. If not, double check the connections or seek help.
+23. Take a look at the Serial Monitor. If _OTAA connection successful!_ appears, then congratulations, you've just connected a new node to the LoRaWAN! If not, double check the steps so far or seek help.
 
 The One board will automatically start sending messages every 10 minutes. Press the small button in the centre of the top board to skip the 10 minute delay.
 
@@ -46,40 +46,40 @@ Verify transmission to Internet
 * https://app.ubidots.com/accounts/signin/
 * Username: _NewcastleIoTPioneers_
 * Password: _m(pDTUGVAg48_
-25. Click the "Devices" link near the centre top.
-26. If a device appears named "one_XXXXXX" where XXXXXX matches the last 6 characters in the DevEUI you set earlier, then rejoice in having transmitted your first LoRaWAN message! If not, try refreshing the website, or seek some help.
+25. Click the _Devices_ link near the centre top.
+26. If a device appears named _one_XXXXXX_ where XXXXXX matches the last 6 characters in the DevEUI you set earlier, then rejoice in having transmitted your first LoRaWAN message! If not, try refreshing the website, or seek some help.
 27. Click on your device to see the data that was transmitted. The 10 variables include 9 data variables generated by the SODAQ One board and 1 more containing all the metadata produced by the LoRaWAN system. For reference, they are:
-* data1 - battery voltage in millivolts
-* data2 - compass heading in degrees
-* data3 - not assigned
-* data4 - acceleration in the left right board direction.
-* data5 - acceleration in the top bottom board direction.
-* data6 - acceleration in the up down board direction. Should be high due to gravity.
-* message - internal timestamp. Also contains "Context" data on the device ID, received signal strength indicator, signal to noise ratio and other radio transmission properties.
+* _data1_ - battery voltage in millivolts
+* _data2_ - compass heading in degrees
+* _data3_ - not assigned
+* _data4_ - acceleration in the left right board direction.
+* _data5_ - acceleration in the top bottom board direction.
+* _data6_ - acceleration in the up down board direction. Should be high due to gravity.
+* _message_ - internal timestamp. Also contains _Context_ data on the device ID, received signal strength indicator, signal to noise ratio and other radio transmission properties.
 
-28. These raw values are a little hard to work with, so let's create some friendlier variables. Click the "Add Variable" box at the end of the variables and select "Derived".
-29. Select your device and then select the "data6" variable.
-30. In the edit box that appears, type "/16000" to divide data6 by 16000.
-31. Click save and then name the new variable "Acceleration". Note it can take a while for the variable to be saved. This should give you the One's acceleration in the vertical direction. If the board is sitting flat, this should be about 1g due to gravity.
+28. These raw values are a little hard to work with, so let's create some friendlier variables. Click the _Add Variable_ box at the end of the variables and select _Derived_.
+29. Select your device and then select the _data6_ variable.
+30. In the edit box that appears, type `/16000` to divide data6 by 16000.
+31. Click save and then name the new variable _Acceleration_. Note it can take a while for the variable to be saved. This should give you the One's acceleration in the vertical direction. If the board is sitting flat, this should be about 1g due to gravity.
 
 
 Create a Dashboard
 ------------------
 
-32. Time to put this LoRaWAN data to use. Click the "Dashboards" link near the centre top of the Ubidots website.
+32. Time to put this LoRaWAN data to use. Click the _Dashboards_ link near the centre top of the Ubidots website.
 33. Click the Dashboards icon near the top left of the window.
-34. Click the small orange "+" icon to create a new Dashboard.
+34. Click the small orange **+** icon to create a new Dashboard.
 35. Give your new Dashboard a name, click the "tick" button, and then click the Dashboard name to open your new Dashboard.
-36. Let's create your first widget. Click the big orange "+" icon to add a widget.
-37. Try a "Chart" first. Click "Chart" and then "Line chart".
-38. Click the orange "+" to add a variable. Find your device in the Widget creation dialog that appears and click it.
-39. Click "data2" (compass heading) and then "Add Variable".
-40. Click "Finish" and watch your data come alive.
-41. Let's try a Gauge next. Click the big orange "+" icon to add another widget, select "Indicator" and then "Gauge".
-42. Select your device and then select "data1" (battery voltage).
-43. Set the min value to 3000 and the max value to 5000 and click "Finish".
-44. What about a map? Try adding a map widget. Use the "satellites" variable and the lat/lng context data will be automatically picked. Note it can take a while to get a GPS fix.
-45. Check out the "One Example" for some other ideas.
+36. Let's create your first widget. Click the big orange **+** icon to add a widget.
+37. Try a _Chart_ first. Click _Chart_ and then _Line chart_.
+38. Click the orange **+** to add a variable. Find your device in the Widget creation dialog that appears and click it.
+39. Click _data2_ (compass heading) and then _Add Variable_.
+40. Click _Finish_ and watch your data come alive.
+41. Let's try a Gauge next. Click the big orange **+** icon to add another widget, select "Indicator" and then "Gauge".
+42. Select your device and then select _data1_ (battery voltage).
+43. Set the min value to 3000 and the max value to 5000 and click _Finish_.
+44. What about a map? Try adding a map widget. Use the _satellites_ variable and the lat/lng context data will be automatically picked. Note it can take a while to get a GPS fix.
+45. Check out the _One Example_ for some other ideas.
 
 
 Get Creative
