@@ -10,8 +10,8 @@ Installation
 4. Select the _Sketch->Include Library->Manage Libraries..._ menu item.
 5. Enter `uno wifi` in the search field and then select and install the _Arduino Uno WiFi Dev Ed Library_ by Arduino.
 6. After installation, click _Close_.
-7. Select the "Tools->Board->Arduino Uno WiFi" menu item
-8. Select the "Tools->Ports->Arduino Uno WiFi" menu item.
+7. Select the _Tools->Board->Arduino Uno WiFi_ menu item
+8. Select the _Tools->Ports->Arduino Uno WiFi_ menu item.
 
 
 Connect to WiFi
