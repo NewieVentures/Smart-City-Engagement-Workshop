@@ -32,10 +32,9 @@ Connect to WiFi
 Send via WiFi
 -------------
 
-19. In the DemoApp window, find the line that starts with _#define ID_, about 8 lines from the top.
-20. Add your UNO's identifier. For example, if your UNO identifier is _822ed1_, the line should look like:
-* #define ID    822ed1
-* The spaces between _ID_ and _822ed1_ are not important.
+19. In the DemoApp window, find the line that starts with `#define ID`, about 8 lines from the top.
+20. Add your UNO's identifier. For example, if your UNO identifier is `822ed1`, the line should look like:
+* `#define ID    822ed1`
 21. Save your changes and then click the "tick" button at the top left of the DemoApp window.
 * Some red and white text output should appear in the black section at the bottom of the window.
 * If _Done compiling_ appears in the green section above the black section, move to the next step.
