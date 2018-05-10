@@ -11,7 +11,7 @@ Installation
 5. Enter _LSM303_ in the search field and then select and install the _LSM303 by Pololu_ library.
 6. After installation, click _Close_.
 7. Select the _File->Preferences_ menu item.
-8. Add "http://downloads.sodaq.net/test/package_sodaq_index.json" to the _Additional Board Manager URLs_ field and click _OK_.
+8. Add "http://downloads.sodaq.net/package_sodaq_index.json" to the _Additional Board Manager URLs_ field and click _OK_.
 9. Select the _Tools->Board->Boards Manager..._ menu item.
 10. Enter _SODAQ_ in the search field and then select and install the SODAQ SAMD Boards item.
 11. After installation, click _Close_.
