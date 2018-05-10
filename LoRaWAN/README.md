@@ -68,14 +68,14 @@ Create a Dashboard
 
 32. Time to put this LoRaWAN data to use. Click the _Dashboards_ link near the centre top of the Ubidots website.
 33. Click the Dashboards icon near the top left of the window.
-34. Click the small orange **+** icon to create a new Dashboard.
+34. Click the small orange **"+"** icon to create a new Dashboard.
 35. Give your new Dashboard a name, click the "tick" button, and then click the Dashboard name to open your new Dashboard.
-36. Let's create your first widget. Click the big orange **+** icon to add a widget.
+36. Let's create your first widget. Click the big orange **"+"** icon to add a widget.
 37. Try a _Chart_ first. Click _Chart_ and then _Line chart_.
-38. Click the orange **+** to add a variable. Find your device in the Widget creation dialog that appears and click it.
+38. Click the orange **"+"** to add a variable. Find your device in the Widget creation dialog that appears and click it.
 39. Click _data2_ (compass heading) and then _Add Variable_.
 40. Click _Finish_ and watch your data come alive.
-41. Let's try a Gauge next. Click the big orange **+** icon to add another widget, select "Indicator" and then "Gauge".
+41. Let's try a Gauge next. Click the big orange **"+"** icon to add another widget, select "Indicator" and then "Gauge".
 42. Select your device and then select _data1_ (battery voltage).
 43. Set the min value to 3000 and the max value to 5000 and click _Finish_.
 44. What about a map? Try adding a map widget. Use the _satellites_ variable and the lat/lng context data will be automatically picked. Note it can take a while to get a GPS fix.
