@@ -20,7 +20,8 @@ Workstation
 -----------
 
 - PC or laptop with a web browser and Arduino (latest version).
-  - If using Windows, ensure the CH341SER drivers can be installed for the Xkit. Other drivers install automatically.
+  - If using Windows, ensure the CH341SER drivers can be installed for the Xkit. Often they can't, so run _SETUP_ inside the _CH341SER_ folder as Adminstrator beforehand.
+  - Other drivers install automatically.
 - USB port.
 - For the WiFi kit, the ability to connect to a WiFi access point is useful. Otherwise participants will need to use a smartphone or other device.
 
