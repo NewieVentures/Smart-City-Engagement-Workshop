@@ -4,9 +4,10 @@ Getting Started with the LoRaWAN Kit
 Installation
 ------------
 
-1. Plug the Seeeduino LoRaWAN board into the USB port of the computer.
+1. Plug the Seeeduino LoRaWAN board into the USB port of the computer and verify that the `PWR` LED lights green.
+![Seeeduino board showing lit PWR LED](images/Seeeduino - LEDs.jpeg)
 2. Open the _DemoApp_ folder.
-3. Double-click the _DemoApp_ file to open in Arduino.
+3. Double-click the _DemoApp.ino_ file to open in Arduino.
 7. Select the _File->Preferences_ menu item.
 8. Add "https://raw.githubusercontent.com/Seeed-Studio/Seeed_Platform/master/package_seeeduino_boards_index.json" to the _Additional Board Manager URLs_ field and click _OK_.
 9. Select the _Tools->Board->Boards Manager..._ menu item.
