@@ -39,7 +39,7 @@ Verify transmission to Internet
 16. Open the Ubidots website in a browser and use the username and password to login:
 * https://app.ubidots.com/accounts/signin/
 * Username: `NewcastleIoTPioneers`
-* Password: `m(pDTUGVAg48`
+* Password: redacted
 
 17. Click the _Devices_ link near the centre top.
 18. Look for the sticker on the underside of the UNO board, and note the _SigfoxID_, eg. _002BEFDB_.

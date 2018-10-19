@@ -50,7 +50,7 @@ Verify transmission to Internet
 24. Open the Ubidots website in a browser and use the username and password to login:
 * https://app.ubidots.com/accounts/signin/
 * Username: `NewcastleIoTPioneers`
-* Password: `m(pDTUGVAg48`
+* Password: redacted
 25. Click the _Devices_ link near the centre top.
 26. If a device appears named _uno_XXXXXX_ where XXXXXX matches your UNO's ID, then rejoice in having transmitted your first WiFi message! If not, try refreshing the website, or seek some help.
 27. Click on your device to see the data that was transmitted. The 6 variables are simply the raw values of the analog inputs on the UNO. For reference, they are:
