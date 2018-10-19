@@ -5,8 +5,8 @@
 
 ## Instructions
 
-1. Download or 'clone' this repository to the desktop.
-2. Unzip the download to the desktop.
+1. Use the button at the top right of this window to "Download ZIP" to your computer.
+2. Open the download to extract the zip file.
 3. Click the link for the board you want to use to go to the next set of instructions.
 
 [Seeeduino :: LoRaWAN (AS923)](../master/LoRaWAN_AS923)
