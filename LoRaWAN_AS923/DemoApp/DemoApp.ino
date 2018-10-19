@@ -1,20 +1,38 @@
-//IoT Workshop, Seeeduino LoRaWAN kit, DemoApp
-//By Chris Evans
+//Smart City Workshop, Seeeduino LoRaWAN kit, DemoApp
+//By NewieVentures
+
+
+//************
+//* Includes *
+//************
 
 #include <LoRaWan.h>
-#include "TinyGPS++.h"
 
-#define debugSerial SerialUSB
-#define gpsSerial Serial
-//#define loraSerial Serial1
-//#define groveSerial Serial
 
-TinyGPSPlus gps;
+//***********
+//* Defines *
+//***********
 
-//unsigned char data[10] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 0xA,};
-char buffer[256];
+#define SERIAL_DEBUG  SerialUSB
+#define SERIAL_LORA   Serial1
+#define SERIAL_GROVE  Serial
 
-static struct {
+const int PIN_CHARGE_STATUS     = A5;
+const int PIN_BATTERY_VOLTAGE   = A4;
+
+//  OTAA
+const char AppEUI[]    = "70B3D57ED001385C";
+const char AppKey[]    = "4739207A62960378574F5003F2936774";
+
+
+//**********
+//* Global *
+//**********
+
+char gBuf[256]; //General scratch buffer
+
+static struct
+{
   uint16_t data1;
   uint16_t data2;
   uint16_t data3;
@@ -26,21 +44,9 @@ static struct {
   float    latitude;
   float    longitude;
   float    altitude;
-} loRaPacket = {0};
+} gLoRaPayload = {0}; //packet payload to send via LoRa
 
-//--------------
-//  Batttery
-//--------------
-const int pin_battery_status  = A5;
-const int pin_battery_voltage = A4;
-
-
-//---------------
-//     OTAA
-//---------------
-uint8_t DevEUI[8] = { 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00 };
-uint8_t AppEUI[8] = { 0xDE, 0xAD, 0xBE, 0xEF, 0xDE, 0xAD, 0xBE, 0xEF };
-uint8_t AppKey[16] = { 0xFE, 0xED, 0xFA, 0xCE, 0xFE, 0xED, 0xFA, 0xCE, 0xFE, 0xED, 0xFA, 0xCE, 0xFE, 0xED, 0xFA, 0xCE };
+unsigned char *gpLoRaPayload = (unsigned char*)&gLoRaPayload;
 
 
 //---------------
@@ -48,80 +54,65 @@ uint8_t AppKey[16] = { 0xFE, 0xED, 0xFA, 0xCE, 0xFE, 0xED, 0xFA, 0xCE, 0xFE, 0xE
 //---------------
 void setup(void)
 {
-    debugSerial.begin(115200);
-    //while(!debugSerial);
+  SERIAL_DEBUG.begin(115200);
+  //while(!SERIAL_DEBUG);
+  
+  pinMode(PIN_CHARGE_STATUS, INPUT);
+  
+  randomSeed(analogRead(0));
+  
+  setupLoRa();
 
-    //=======
-    //Battery
-    //=======
-    pinMode(pin_battery_status, INPUT);
+  //The LoRaWAN library is garbage in general, but particularly setOTAAJoin. Difficult to do our own because while the
+  //RHF76-052 docs say you can check join status with AT+JOIN=? and do auto-joins with AT+JOIN=10, 20, 4 or AT+JOIN=0
+  //these all return "ERROR(-1)", so I guess not. Doing joins manually is problematic too because we have to monitor
+  //the complicated responses as they come in.
+  //Main problem with LoRaWAN library is that if we try to call it again too early we get "+JOIN: No band in 29378ms".
+  //To workaround that, lets force join request duty cycle limitation off do our own delays:
+  SerialLoRa.print("AT+LW=JDC, OFF\r\n");
+  delay(500);
+  
+  for(int i=1; true; i++)
+  {
+    SERIAL_DEBUG.print("OTAA Join Attempt ");
+    SERIAL_DEBUG.println(i);
 
-    //======
-    // GPS
-    //======
-    char c;
-    bool locked;
-    gpsSerial.begin(9600);     // open the GPS
-
-    // For S&G, let's get the GPS fix now, before we start running arbitary
-    // delays for the LoRa section
-
-    while (!gps.location.isValid())
-    {
-      while (gpsSerial.available() > 0)
-      {
-        if (gps.encode(c=Serial.read()))
-        {
-          gpsLoop();
-          if (gps.location.isValid())
-          {
-          //locked = true;
-            break;
-          }
-        }
-      //debugSerial.print(c);
-      }
-
-      //if (locked)
-        //break;
-
-      if (millis() > 15000 && gps.charsProcessed() < 10)
-      {
-        debugSerial.println(F("No GPS detected: check wiring."));
-        debugSerial.println(gps.charsProcessed());
-        while(true);
-      } 
-      else if (millis() > 20000)
-      {
-        debugSerial.println(F("Not able to get a fix in alloted time."));  
-        break;
-      }
-    }
+    digitalWrite(PIN_LED, HIGH);
+    delay(500);
+    digitalWrite(PIN_LED, LOW);
     
-    setupLoRa();
+    //For AS923 and AU915 and all others I've seen, JOIN_ACCEPT_DELAY1 is 5s and JOIN_ACCEPT_DELAY2 is 6s,
+    //so the default timeout of 5s will not do. Up it to 7.
+    if(lora.setOTAAJoin(JOIN, 7))
+      break;
+
+    delay(random(2000)); //insert a random delay before the next attempt
+  }
+
+  unsigned long epoch = millis();
+  SERIAL_DEBUG.print("Join Successful. Took ");
+  SERIAL_DEBUG.print(epoch/1000);
+  SERIAL_DEBUG.println(" seconds.");
 }
 
 void loop(void)
 {
-    //=======
-    //Battery
-    //=======
-    int a = analogRead(pin_battery_voltage);
-    loRaPacket.data1 = a/1023.0*3.3*11.0;        // there's an 1M and 100k resistor divider
-    loRaPacket.data2 = digitalRead(pin_battery_status);
-
-    //======
-    // GPS
-    //======
-    gpsLoop();
-
-    //========
-    //LoRaWAN
-    //========
-    debugSerial.println("Sending to LoRaWAN...");
-    sendPacket((uint8_t*)(&loRaPacket), sizeof(loRaPacket));
+  //return; //DELETE THIS LINE
   
-    delay(10000);
+  digitalWrite(PIN_LED, HIGH);
+  
+  //Battery
+  gLoRaPayload.data1 = analogRead(PIN_BATTERY_VOLTAGE); // note there's a 1M/100k resistor divider
+  gLoRaPayload.data2 = digitalRead(PIN_CHARGE_STATUS); //"0 while charging, return 1 while charge done or no battery insert"
+
+  //LoRaWAN
+  SERIAL_DEBUG.println("Sending to LoRaWAN...");
+  if(!lora.transferPacket(gpLoRaPayload, sizeof(gLoRaPayload), 4)) //Needs to block for 4 seconds to send!
+    SERIAL_DEBUG.println("LoRaWAN Transmission FAILED!");
+  
+  digitalWrite(PIN_LED, LOW);
+  
+  delay(120000); //wait 2 minutes
 }
 
 //--------------
@@ -130,86 +121,38 @@ void loop(void)
 
 void setupLoRa()
 {
-    lora.init();
-    
-    memset(buffer, 0, 256);
-    lora.getVersion(buffer, 256, 1);
-    debugSerial.print(buffer); 
-    
-    memset(buffer, 0, 256);
-    lora.getId(buffer, 256, 1);
-    debugSerial.print(buffer);
-    
-    // void setId(char *DevAddr, char *DevEUI, char *AppEUI);
-    //lora.setId(NULL, NULL, NULL);
-    // void setKey(char *NwkSKey, char *AppSKey, char *AppKey);
-    //lora.setKey(NULL, NULL, NULL);
-    
-    lora.setDeciveMode(LWOTAA);
-    lora.setDataRate(DR0, AS923);
-    
-    lora.setDutyCycle(false);
-    lora.setJoinDutyCycle(false);
-    
-    lora.setPower(14);
-    
-    while(!lora.setOTAAJoin(JOIN));
-}
+  lora.init();
+  lora.setDeviceReset();
+  lora.setDeviceDefault();
 
-void sendPacket(uint8_t *payload, uint8_t payloadSize)
-{
-  if(!lora.transferPacket(payload, payloadSize, 10)) debugSerial.println("LoRaWAN Transmission FAILED!");
-}
+  memset(gBuf, 0, sizeof(gBuf));
+  lora.getVersion(gBuf, sizeof(gBuf));
+  SERIAL_DEBUG.print(gBuf);
 
-void gpsLoop()
-{
-    debugSerial.print(F("Location: ")); 
-    if (gps.location.isValid())
-    {
-      loRaPacket.numSatellites  = gps.satellites.value();
-      loRaPacket.latitude       = gps.location.lat();
-      loRaPacket.longitude      = gps.location.lng();
-      loRaPacket.altitude       = gps.altitude.meters();
-    }
-    else
-    {
-      debugSerial.print(F("INVALID"));
-    }
+  memset(gBuf, 0, sizeof(gBuf));
+  lora.getId(gBuf, sizeof(gBuf));
+  SERIAL_DEBUG.print(gBuf);
 
-    debugSerial.print(F("  Date/Time: "));
-    if (gps.date.isValid())
-    {
-      debugSerial.print(gps.date.month());
-      debugSerial.print(F("/"));
-      debugSerial.print(gps.date.day());
-      debugSerial.print(F("/"));
-      debugSerial.print(gps.date.year());
-    }
-    else
-    {
-      debugSerial.print(F("INVALID"));
-    }
+  //Note the LoRaWAN library has _DEBUG_SERIAL_ set by default, which means this call will spit out
+  //the lora module output up to now. So we call it early to avoid too much junk.
+  lora.setKey(NULL/*NwkSKey*/, NULL/*AppSKey*/, (char*)AppKey);
+  lora.setId(NULL/*DevAddr*/, NULL/*DevEUI*/, (char*)AppEUI);
+  
+  lora.setDeciveMode(LWOTAA); //Watch the creative spelling by the library.
+  // A higher spreading factor allows for longer range but lower throughput
+  // In AS923, DR0 to DR6 are available, DR7 is FSK. But, DR2 "should" be used for JoinReq.
+  lora.setDataRate(DR2, AS923);
 
-    debugSerial.print(F(" "));
-    if (gps.time.isValid())
-    {
-      if (gps.time.hour() < 10) debugSerial.print(F("0"));
-      debugSerial.print(gps.time.hour());
-      debugSerial.print(F(":"));
-      if (gps.time.minute() < 10) debugSerial.print(F("0"));
-      debugSerial.print(gps.time.minute());
-      debugSerial.print(F(":"));
-      if (gps.time.second() < 10) debugSerial.print(F("0"));
-      debugSerial.print(gps.time.second());
-      debugSerial.print(F("."));
-      if (gps.time.centisecond() < 10) debugSerial.print(F("0"));
-      debugSerial.print(gps.time.centisecond());
-    }
-    else
-    {
-      debugSerial.print(F("INVALID"));
-    }
+  //These are undocumented, but probably disable the radio's duty cycle limit throttling.
+  //lora.setDutyCycle(false);
+  //lora.setJoinDutyCycle(false);
 
-    debugSerial.println();
+  //Tx power limit in AU915 is 30dBm (1W) or 26dBm on 500kHz channels. Limit in AS923 not specified but
+  //default shall be 14dBm. Some references wrongly (confused with US?) say 19dBm is max.
+  //We use max power because even with 3dBi antenna we're safe, and ADR (if it's working) will lower us as
+  //necessary. See mDOT developer guide: "For the ADR to judge the SNR correctly, set Tx power to maximum".
+  //Unfortunately 1, despite the docs it turns out POWER command only accepts 16, 14, 12, 10, 8, 6, 4 or 2 (see AT+POWER=TABLE).
+  //Unfortunately 2, the RHF76-052 is 14dBm max @ 868MHz/915MHz (20dBm max @ 434MHz/470MHz) so 14 is max anyway.
+  lora.setPower(20); //20dBm, 14dBm, 11dBm, 8dBm, 5dBm or 2dBm. 14dBm is default.
 }
 

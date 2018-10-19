@@ -9,7 +9,9 @@
 2. Unzip the download to the desktop.
 3. Click the link for the board you want to use to go to the next set of instructions.
 
-[SODAQ-One :: LoRaWAN](../master/LoRaWAN)
+[Seeeduino :: LoRaWAN (AS923)](../master/LoRaWAN_AS923)
+
+[SODAQ-One :: LoRaWAN (AU915)](../master/LoRaWAN_AU915)
 
 [Thinxtra Xkit :: SigFox](../master/Sigfox)
 

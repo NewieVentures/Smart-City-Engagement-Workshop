@@ -11,10 +11,19 @@ function Decoder(bytes, port) {
   decoded.data5       = (bytes[8]<<0) + (bytes[9]<<8);
   decoded.data6       = (bytes[10]<<0) + (bytes[11]<<8);
   
-  decoded.satellites  = (bytes[12]<<0) + (bytes[13]<<8);
-  decoded.latitude    = (bytes[14]<<0) + (bytes[15]<<8) + (bytes[16]<<16) + (bytes[17]<<24);
-  decoded.longitude   = (bytes[18]<<0) + (bytes[19]<<8) + (bytes[20]<<16) + (bytes[21]<<24);
-  decoded.altitude    = (bytes[22]<<0) + (bytes[23]<<8) + (bytes[24]<<16) + (bytes[25]<<24);
+  numSat = (bytes[12]<<0) + (bytes[13]<<8);
+  lat    = (bytes[14]<<0) + (bytes[15]<<8) + (bytes[16]<<16) + (bytes[17]<<24);
+  lng    = (bytes[18]<<0) + (bytes[19]<<8) + (bytes[20]<<16) + (bytes[21]<<24);
+  alt    = (bytes[22]<<0) + (bytes[23]<<8) + (bytes[24]<<16) + (bytes[25]<<24);
   
+  decoded.satellites  = {
+    value: numSat,
+    context: {
+      lat: lat,
+      lng: lon,
+      alt: alt
+    }
+  };
+
   return decoded;
 }
