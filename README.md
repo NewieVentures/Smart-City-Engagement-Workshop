@@ -5,7 +5,7 @@
 
 ## Instructions
 
-1. Use the button at the top right of this window to "Download ZIP" to your computer.
+1. Download this repository to your computer by using the "Clone or download" button at the top right of this window and selecting "Download ZIP".
 2. Open the download to extract the zip file.
 3. Click the link for the board you want to use to go to the next set of instructions.
 

@@ -141,12 +141,12 @@ Create a Dashboard
 Get Creative
 ------------
 
-46. Think about some of the possibilities:
-	* What could this data be used for?
-	* Are there any other sensors (eg. moisture, proximity, sound) that might be useful?
-	* Is there an Internet service (eg. email, SMS, Twitter, IFTTT) that could be triggered via an event?
-	* What about untethering the board from the computer and running off a battery?
-47. Start experimenting. Keep these guidelines in mind:
+1. Think about some of the possibilities:
+	* What might this data represent?
+	* What other sensors (eg. touch, light, sound) could be useful?
+	* What if the data triggered an event (eg. email, SMS, Twitter, IFTTT)?
+	* How about untethering the board from the computer and running off the battery?
+1. Start experimenting. Keep these guidelines in mind:
 	* All the data in Ubidots is visible to everyone in the workshop. That means you can add data from other people's Things to your dashboard!
 	* That also means you must be careful not to modify dashboards or devices you did not create, or you risk ruining someone else's work.
 	* Note that regardless of the data you send, it must fit the existing 6 data value pattern. The first three data values are unsigned integers and the last three are signed integers.
