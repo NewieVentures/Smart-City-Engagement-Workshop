@@ -97,7 +97,7 @@ void setup(void)
 
 void loop(void)
 {
-  //return; //DELETE THIS LINE
+  return; //DELETE THIS LINE
   
   digitalWrite(PIN_LED, HIGH);
   
@@ -106,7 +106,7 @@ void loop(void)
   gLoRaPayload.data2 = digitalRead(PIN_CHARGE_STATUS); //"0 while charging, return 1 while charge done or no battery insert"
 
   //LoRaWAN
-  SERIAL_DEBUG.println("Sending to LoRaWAN...");
+  SERIAL_DEBUG.println("Sending via LoRaWAN...");
   if(!lora.transferPacket(gpLoRaPayload, sizeof(gLoRaPayload), 4)) //Needs to block for 4 seconds to send!
     SERIAL_DEBUG.println("LoRaWAN Transmission FAILED!");
   

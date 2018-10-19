@@ -105,14 +105,14 @@ Verify transmission to Internet
 Working with data
 -----------------
 
-27. Click on your device to see the data that was transmitted. The 7 variables include 6 data variables and a GPS data collection. For reference, they are:
+27. Click on your device to see the data that was transmitted. The 7 variables include 6 data variables and a GPS data structure. For reference, they are:
 	* _data1_ - battery voltage in millivolts
 	* _data2_ - battery charging status
 	* _data3_ - not assigned
 	* _data4_ - not assigned
 	* _data5_ - not assigned
 	* _data6_ - not assigned
-	* _satellites_ - if a GPS is available, can be populated with location infomration.
+	* _satellites_ - if a GPS is available, can be populated with location information.
 ![Ubidots data](images/Ubidots_data.png)
 28. These raw values are a little hard to work with, so let's create some friendlier variables. Click the _Add Variable_ box at the end of the variables and select _Derived_.
 29. Select your device and then select the _data1_ variable.
@@ -151,3 +151,4 @@ Get Creative
 	* That also means you must be careful not to modify dashboards or devices you did not create, or you risk ruining someone else's work.
 	* Note that regardless of the data you send, it must fit the existing 6 data value pattern. The first three data values are unsigned integers and the last three are signed integers.
 	* You're not restricted to Ubidots. If there's another service you'd like to send the data to, use Ubidots events to push it there.
+	* You're not even restricted by TTN Application. The Thing is yours, so feel free to register your own TTN Application.
