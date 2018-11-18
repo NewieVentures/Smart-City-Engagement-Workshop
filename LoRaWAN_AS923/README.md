@@ -4,24 +4,19 @@ Getting Started with the LoRaWAN (AS923) Kit
 Kit Contents
 ------------
 
-|# |Component |# |Component |
+|# |Component                    |# |Component |
 |---:|:---:|:---|---:|
-|1 | Seeeduino LoRaWAN |17 | Grove - Gear Stepper Motor |
-|18 | Grove - Piezo Vibration Sensor |
-|19 | Red LED w/ resistor |
-|20 | Blue LED w/ resistor |
-|22 | Grove - LCD RGB Backlight |
-|7 | 3.7V LiPo Battery |23 | Grove - Arduino Base Shield |
-|8 | Grove - Variable Colour LED |24 | Grove - Light Sensor |
-|9 | Grove - Infrared Proximity Sensor /w Cable |25 | Grove - Sound Sensor |
-|10 | Grove - LED Bar |26 | Grove - Buzzer |
-|11 | M-M Jumper Wire Bundle |27 | Grove - Touch Sensor |
-|28 | Grove - LED Socket |
-|13 | USB to Micro-USB Cable |29 | Grove - Rotary Angle Sensor |
-|14 | Breadboard |30 | Grove - Temperature Sensor |
-|15 | Grove - 12AWG Cables (10) |31 | Grove - Button |
-|32 | Grove - Stepper Motor Driver |
-
+|1 | Grove - Relay               |12| Grove - 12AWG Cables (10) |
+|2 | Grove - Sound Sensor        |13| Grove - Rotary Angle Sensor |
+|3 | Grove - Buzzer              |14| Grove - LCD RGB Backlight |
+|4 | Grove - LED Socket Kit      |15| Grove - Analog Servo |
+|5 | Red LED w/ resistor         |16| 3.7V LiPo Battery |
+|6 | Blue LED w/ resistor        |17| M-M Jumper Wire Bundle |
+|7 | Breadboard                  |18| USB to Micro-USB Cable |
+|8 | Grove - Touch Sensor        |19| Seeeduino LoRaWAN |
+|9 | Grove - Button              |20| Grove - Arduino Base Shield |
+|10| Grove - Light Sensor        | | |
+|11| Grove - Temperature Sensor  | | |
 
 
 Installation
@@ -88,7 +83,8 @@ Create some Data
 ```
 Sending to LoRaWAN...
 +MSGHEX: Start
-+MSGHEX: Done```
++MSGHEX: Done
+```
 
 Verify transmission to Internet
 -------------------------------
