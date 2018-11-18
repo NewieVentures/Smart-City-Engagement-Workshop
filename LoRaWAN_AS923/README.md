@@ -5,18 +5,17 @@ Kit Contents
 ------------
 
 |# |Component                    |# |Component |
-|---:|:---:|:---|---:|
-|1 | Grove - Relay               |12| Grove - 12AWG Cables (10) |
-|2 | Grove - Sound Sensor        |13| Grove - Rotary Angle Sensor |
-|3 | Grove - Buzzer              |14| Grove - LCD RGB Backlight |
-|4 | Grove - LED Socket Kit      |15| Grove - Analog Servo |
-|5 | Red LED w/ resistor         |16| 3.7V LiPo Battery |
-|6 | Blue LED w/ resistor        |17| M-M Jumper Wire Bundle |
-|7 | Breadboard                  |18| USB to Micro-USB Cable |
-|8 | Grove - Touch Sensor        |19| Seeeduino LoRaWAN |
-|9 | Grove - Button              |20| Grove - Arduino Base Shield |
-|10| Grove - Light Sensor        | | |
-|11| Grove - Temperature Sensor  | | |
+|:---:|:---|:---:|:---|
+|1 | Grove - Relay           |11| Grove - Temperature Sensor  |
+|2 | Grove - Sound Sensor    |12| Grove - 12AWG Cables (10)   |
+|3 | Grove - Buzzer          |13| Grove - Rotary Angle Sensor |
+|4 | Grove - LED Socket Kit  |14| Grove - LCD RGB Backlight   |
+|5 | Red LED w/ resistor     |15| Grove - Analog Servo        |
+|6 | Blue LED w/ resistor    |16| 3.7V LiPo Battery           |
+|7 | Breadboard              |17| M-M Jumper Wire Bundle      |
+|8 | Grove - Touch Sensor    |18| USB to Micro-USB Cable      |
+|9 | Grove - Button          |19| Seeeduino LoRaWAN           |
+|10| Grove - Light Sensor    |20| Grove - Arduino Base Shield |
 
 
 Installation
