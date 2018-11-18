@@ -4,6 +4,8 @@ Getting Started with the LoRaWAN (AS923) Kit
 Kit Contents
 ------------
 
+![Kit photo](images/case_open.jpg)
+
 |# |Component                    |# |Component |
 |:---:|:---|:---:|:---|
 |1 | Grove - Relay           |11| Grove - Temperature Sensor  |
