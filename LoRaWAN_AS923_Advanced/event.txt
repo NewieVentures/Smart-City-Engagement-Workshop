@@ -1,0 +1,17 @@
+WebHook
+
+URL:
+https://integrations.thethingsnetwork.org/ttn-asia-se/api/v2/down/smart_city_workshop/downlinks?key=ttn-account-v2.MaVZxuIbMm2gmV3o-JgecC60EU5zOblvlh9QPSSvblg
+
+Method:
+POST
+
+Payload:
+{
+  "dev_id": "seeeduino_1a0026",
+  "port": 1,
+  "confirmed": false,
+  "payload_fields": {
+    "data": 1
+  }
+}
