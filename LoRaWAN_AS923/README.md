@@ -15,8 +15,7 @@ Kit Contents
 |5 | Grove - Relay               |13| Grove - Rotary Angle Sensor |
 |6 | Grove - Temperature Sensor  |14| Grove - R, G and B LED      |
 |7 | Grove - Sound Sensor        |15| Grove - 12AWG Cables (10)   |
-|8 | Grove - Touch Sensor        
-|9 | Grove - Button              
+|8 | Grove - Touch Sensor                     
       
 
 
