@@ -4,20 +4,20 @@ Getting Started with the LoRaWAN (AS923) Kit
 Kit Contents
 ------------
 
-![Kit photo](images/case_open.jpg)
+![Kit photo](images/newcase.png)
 
 |# |Component                    |# |Component |
 |:---:|:---|:---:|:---|
-|1 | Grove - Relay           |11| Grove - Temperature Sensor  |
-|2 | Grove - Sound Sensor    |12| Grove - 12AWG Cables (10)   |
-|3 | Grove - Buzzer          |13| Grove - Rotary Angle Sensor |
-|4 | Grove - LED Socket Kit  |14| Grove - LCD RGB Backlight   |
-|5 | Red LED w/ resistor     |15| Grove - Analog Servo        |
-|6 | Blue LED w/ resistor    |16| 3.7V LiPo Battery           |
-|7 | Breadboard              |17| M-M Jumper Wire Bundle      |
-|8 | Grove - Touch Sensor    |18| USB to Micro-USB Cable      |
-|9 | Grove - Button          |19| Seeeduino LoRaWAN           |
-|10| Grove - Light Sensor    |20| Grove - Arduino Base Shield |
+|1 | Seeeduino LoRaWan           |9 | Grove - Button              |
+|2 | Grove - Arduino Base Shield |10| Grove - Light Sensor        |
+|3 | Grove - LCD RGB Backlight   |11| Grove - LED Socket Kit      |
+|4 | Grove - Analog Servo        |12| Grove - Buzzer              |
+|5 | Grove - Relay               |13| Grove - Rotary Angle Sensor |
+|6 | Grove - Temperature Sensor  |14| Grove - R, G and B LED      |
+|7 | Grove - Sound Sensor        |15| Grove - 12AWG Cables (10)   |
+|8 | Grove - Touch Sensor        
+|9 | Grove - Button              
+      
 
 
 Installation
