@@ -4,20 +4,32 @@ Getting Started with the LoRaWAN (AS923) Kit
 Kit Contents
 ------------
 
-![Kit photo](images/newcase.png)
+![Kit photo](images/smart_city_updatedcase.png)
 
 |# |Component                    |# |Component |
 |:---:|:---|:---:|:---|
-|1 | Seeeduino LoRaWan           |9 | Grove - Button              |
-|2 | Grove - Arduino Base Shield |10| Grove - Light Sensor        |
-|3 | Grove - LCD RGB Backlight   |11| Grove - LED Socket Kit      |
-|4 | Grove - Analog Servo        |12| Grove - Buzzer              |
-|5 | Grove - Relay               |13| Grove - Rotary Angle Sensor |
-|6 | Grove - Temperature Sensor  |14| Grove - R, G and B LED      |
-|7 | Grove - Sound Sensor        |15| Grove - 12AWG Cables (10)   |
-|8 | Grove - Touch Sensor        
-              
-      
+|1 | Grove - Temperature Sensor  |9 | Grove - Relay               |
+|2 | Grove - Sound Sensor        |10| Grove - R, G and B LED      |
+|3 | Grove - Touch Sensor        |11| Grove - Seeeduino LoRaWAN   |
+|4 | Grove - Light Sensor        |12| Grove - LCD RGB Backlight   |
+|5 | Grove - Rotary Angle Sensor |13| Grove - Base Shield         |
+|6 | Grove - Button              |14| Grove - 12AWG Cables (10)   |
+|7 | Grove - Buzzer              |15| Grove - Analog Servo        |
+|8 | Grove - LED Socket Kit      |16| USB to micro USB cable      | 
+
+Kit 17 and 19 are different 
+
+  ![Kit 17 and 19 photo](images/Smart_city_case17_and_19.png)
+
+|# |Component                    |# |Component |
+|:---:|:---|:---:|:---|
+|1 | Grove - Temperature Sensor  |8 | Grove - Chainable RGB LED   |
+|2 | Grove - Button              |9 | Grove - 4 Digit Display     |
+|3 | Grove - Buzzer              |10| Grove - Base Shield         |
+|4 | Grove - Light Sensor        |11| Grove - Seeeduino LoRaWAN   |
+|5 | Grove - Rotary Angle Sensor |12| Grove - 12AWG Cables (10)   |
+|6 | Grove - Vibration Motor     |13| USB to micro USB cable      |
+|7 | Grove - 3 Axis Digital              
 
 
 Installation
