@@ -41,7 +41,7 @@ Installation
 1. If you have a windows computer, go to http://wiki.seeedstudio.com/Seeeduino_LoRAWAN/ and install the driver.
 1. To make sure the driver was installed successful, open your Device Manager to see if Seeeduino LoRaWAN exists.
 1. In the zip folder you downloaded earlier, open the _DemoApp_ folder in the _LoRaWAN_AS923_ folder.
-1. Double-click the _DemoApp.ino_ file to open in Arduino.
+1. Double-click the _DemoApp.ino_ file to open in Arduino. \
 ![Arduino project screenshot](images/Arduino_screenshot.png)
 1. From the menu bar, select **File > Preferences** or **Arduino > Preferences** menu item.
 ![Arduino preferences screenshot](images/Arduino_preferences_screenshot.png)
