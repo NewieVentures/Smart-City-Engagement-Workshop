@@ -21,8 +21,8 @@ const int PIN_CHARGE_STATUS     = A5;
 const int PIN_BATTERY_VOLTAGE   = A4;
 
 //  OTAA
-const char AppEUI[]    = "70B3D57ED001385C";
-const char AppKey[]    = "4739207A62960378574F5003F2936774";
+const char AppEUI[]    = "70B3D57ED002C7BE";
+const char AppKey[]    = "C1EDAE31F160667C025381C9BF8E99AF";
 
 
 //**********
