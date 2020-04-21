@@ -27,7 +27,7 @@ Installation
 ![Seeeduino board showing lit PWR LED](images/Seeeduino-LEDs.jpeg)
 1. In the zip folder you downloaded, open the _DemoApp_ folder in the _LoRaWAN_AS923_ folder.
 1. Double-click the _DemoApp.ino_ file to open in Arduino.
-![Arduino project screenshot](images/Arduino_project_screenshot.png)
+![Arduino project screenshot](images/Arduino_screenshot.png)
 1. From the menu bar, select **File > Preferences** or **Arduino > Preferences** menu item.
 ![Arduino preferences screenshot](images/Arduino_preferences_screenshot.png)
 1. Add the following URL to the _Additional Board Manager URLs_ field and click _OK_.
