@@ -17,14 +17,14 @@ Kit Contents
 |7 | Grove - Buzzer              |15| Grove - Analog Servo        |
 |8 | Grove - LED Socket Kit      |16| USB to micro USB cable      | 
 
-Kit 20 and 21 are different. The components that are different have been italicised. 
+Kit 20 is different. The components that are different have been italicised. 
 
   ![Kit 17 and 19 photo](images/Smart_city_case17_and_19.png)
 
 |# |Component                    |# |Component |
 |:---:|:---|:---:|:---|
-|1 | Grove - Temperature Sensor  |8 | *Grove - Changable RGB LED*   |
-|2 | Grove - Button              |9 | *Grove - 4 Digit Display*    |
+|1 | Grove - Temperature Sensor  |8 | *Grove - RGB LED*           |
+|2 | Grove - Button              |9 | *Grove - 4 Digit Display*   |
 |3 | Grove - Buzzer              |10| Grove - Base Shield         |
 |4 | Grove - Light Sensor        |11| Grove - Seeeduino LoRaWAN   |
 |5 | Grove - Rotary Angle Sensor |12| Grove - 12AWG Cables (10)   |
