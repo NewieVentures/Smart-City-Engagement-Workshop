@@ -90,9 +90,9 @@ Verify transmission to Internet
 -------------------------------
 
 1. If your Thing is successfully sending data, it's time to check the other end. Open the Ubidots website in a browser and use the username and password provided:
-	* https://app.ubidots.com/accounts/signin/
-	* Username: Parramatta_workshop
-	* Password: parramatta!23
+	* `https://app.ubidots.com/accounts/signin/
+	* Username: `Parramatta_workshop
+	* Password: `parramatta!23
 1. Click the _Devices_ link near the centre top.
 1. Devices are named by their `DevEUI`. If you can find a device matching your `DevEUI` then rejoice in having transmitted your first LoRaWAN message! If not, try refreshing the website, or seek some help.
 
